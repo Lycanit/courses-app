@@ -1,0 +1,6 @@
+.courseCardMainTable {
+    width: 96%; 
+    border-color: #996b15; /* Цвет границы */
+    border-style: solid; /* Стиль границы */
+    margin: 2%;
+}
