@@ -1,0 +1,18 @@
+.createCoursesMainTable {
+    width: 96%; 
+    border-color: #cc1313; /* Цвет границы */
+    border-style: solid; /* Стиль границы */
+    margin: 2%;
+}
+
+textarea
+{
+  width: 98%;
+}
+
+.createCoursesInnerTable {
+    width: 98%; 
+    border-color: #13cc32; /* Цвет границы */
+    border-style: solid; /* Стиль границы */
+    margin: 2px;
+}
