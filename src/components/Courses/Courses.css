@@ -1,0 +1,6 @@
+.coursesMainTable {
+    width: 96%; 
+    border-color: #cc1313; /* Цвет границы */
+    border-style: solid; /* Стиль границы */
+    margin: 2%;
+}
