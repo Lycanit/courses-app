@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Input(props) {
-	function handleChange(e) {
+const Input = (props) => {
+	const handleChange = (e) => {
 		if (typeof props.onChange === 'function') {
 			props.onChange(e.target.value);
 		}
-	}
+	};
 	return (
 		<div>
 			<input
@@ -16,5 +16,5 @@ function Input(props) {
 			/>
 		</div>
 	);
-}
+};
 export default Input;

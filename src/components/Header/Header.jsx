@@ -1,9 +1,9 @@
 import Logo from './components/Logo/Logo.jsx';
 import Button from '../../common/Button/Button.jsx';
 import './Header.css';
-
 import React from 'react';
-function Header(props) {
+
+const Header = (props) => {
 	return (
 		<table className='mainTable'>
 			<tbody>
@@ -24,5 +24,5 @@ function Header(props) {
 			</tbody>
 		</table>
 	);
-}
+};
 export default Header;

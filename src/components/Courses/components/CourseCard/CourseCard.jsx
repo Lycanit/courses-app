@@ -1,8 +1,9 @@
+import utils from '../../../../utils.js';
 import Button from '../../../../common/Button/Button.jsx';
 import './CourseCard.css';
-
 import React from 'react';
-function CourseCard(props) {
+
+const CourseCard = (props) => {
 	return (
 		<table className='courseCardMainTable'>
 			<tbody>
@@ -36,7 +37,8 @@ function CourseCard(props) {
 								<tr>
 									<td>
 										<p>
-											<strong>Duration: </strong> {ConverTime(props.duration)}
+											<strong>Duration: </strong>{' '}
+											{utils.converTime(props.duration)}
 										</p>
 									</td>
 								</tr>
@@ -65,10 +67,6 @@ function CourseCard(props) {
 			</tbody>
 		</table>
 	);
-}
-
-function ConverTime(mins) {
-	return Math.floor(mins / 60) + ' : ' + (mins % 60) + ' hours';
-}
+};
 
 export default CourseCard;

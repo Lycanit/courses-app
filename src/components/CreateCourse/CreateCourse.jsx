@@ -1,18 +1,15 @@
+import utils from '../../utils.js';
 import Button from '../../common/Button/Button.jsx';
 import Input from '../../common/Input/Input.jsx';
 import './CreateCourse.css';
-
 import React, { useState } from 'react';
 
-function CreateCourse(props) {
+const CreateCourse = (props) => {
 	const [title, setTitle] = useState('');
 	const [description, setDescription] = useState('');
 	const [authorName, setAuthorName] = useState('');
 	const [duration, setDuration] = useState(0);
 	const [authors, setAuthors] = useState([]);
-	// function callBackHander(val) {
-	// 	props.callBack(val);
-	// }
 	return (
 		<div>
 			<table className='createCoursesMainTable'>
@@ -131,7 +128,10 @@ function CreateCourse(props) {
 													<tr align='center'>
 														<td>
 															<p>
-																Duration <strong>{ConverTime(duration)}</strong>{' '}
+																Duration{' '}
+																<strong>
+																	{utils.converTime(duration, false)}
+																</strong>{' '}
 																hours
 															</p>
 														</td>
@@ -149,10 +149,7 @@ function CreateCourse(props) {
 													</tr>
 													<tr>
 														<td align='center'>
-															{props.db.mockedAuthorsList.map(function (
-																object,
-																i
-															) {
+															{props.db.mockedAuthorsList.map((object, i) => {
 																if (
 																	!authors.some((item) => item.id === object.id)
 																)
@@ -180,7 +177,7 @@ function CreateCourse(props) {
 													</tr>
 													<tr>
 														<td align='center'>
-															{authors.map(function (object, i) {
+															{authors.map((object, i) => {
 																return (
 																	<div>
 																		{object.name} &nbsp;
@@ -212,20 +209,6 @@ function CreateCourse(props) {
 			</table>
 		</div>
 	);
-}
-
-function getAuthor(authorsAr, mockedAuthorsList) {
-	let names = [];
-	for (let i = 0; i < mockedAuthorsList.length; i++) {
-		if (authorsAr.includes(mockedAuthorsList[i].id)) {
-			names.push(mockedAuthorsList[i].name);
-		}
-	}
-	return names.join(', ');
-}
-
-function ConverTime(mins) {
-	return Math.floor(mins / 60) + ' : ' + (mins % 60);
-}
+};
 
 export default CreateCourse;
